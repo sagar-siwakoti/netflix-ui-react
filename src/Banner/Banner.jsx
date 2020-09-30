@@ -34,16 +34,17 @@ function Banner(props) {
       <div className="banner__contents">
         {/*title*/}
         <h1 className="banner__title">{movie?.title || movie?.name || movie?.original_name}</h1>
+        {/*DIV->2 OTA BUTTON*/}
         <div className="banner__buttons">
           <button className="banner__button">Play</button>
           <button className="banner__button">My List</button>
         </div>
-        {/*DIV->2 OTA BUTTON*/}
+        {/*description*/}
         <h1 className="banner__description">
           {truncate(movie?.overview,150)}
         </h1>
-        {/*description*/}
       </div>
+      <div className="banner__fadeButtom" />
     </header>
   );
 }

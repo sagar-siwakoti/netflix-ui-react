@@ -1,15 +1,17 @@
 import React from "react";
 import "./App.css";
-import Row from "./Rows/Row";
+import Row from "./components/Rows/Row";
 import requests from "./requests";
-import Banner from "./Banner/Banner";
-import Nav from "./NavBar/Nav";
+import Banner from "./components/Banner/Banner";
+import Nav from "./components/NavBar/Nav";
 function App() {
   return (
     <div className="app">
+
+     {/*=====================Inside signup work============================*/}
       {/*Nav*/}
-      <Nav/>
-      {/*Banner*/}
+      {/*<Nav/>
+      Banner
       <Banner/>
       <Row
         title="NETFLIX Originals"
@@ -23,6 +25,9 @@ function App() {
       <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
       <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
       <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
+   */}
+        {/*=====================Inside signup work============================*/}
+
     </div>
   );
 }

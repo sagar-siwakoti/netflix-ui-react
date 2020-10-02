@@ -1,6 +1,20 @@
 *{
   margin: 0;
+  box-sizing: border-box;
 }
-.app{
-  background-color: #111;
+:root{
+  --main-red:rgb(211,9,19);
+  --main-red-hover:#e50914;
+  --main-dark:rgb(20,20,20);
+  --main-grey:rgb(153,153,153);
+}
+body{
+  font-family: "Helvetica Neue";
+  -webkit-font-smoothing: antialiased;
+  background: var(--main-dark);
+  color: #fff;
+}
+a{
+  text-decoration: none;
+color: white;
 }

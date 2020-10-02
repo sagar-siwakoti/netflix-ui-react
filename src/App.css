@@ -9,7 +9,7 @@
   --main-grey:rgb(153,153,153);
 }
 body{
-  font-family: "Helvetica Neue";
+  font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
   -webkit-font-smoothing: antialiased;
   background: var(--main-dark);
   color: #fff;

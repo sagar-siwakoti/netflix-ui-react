@@ -26,6 +26,7 @@
   z-index: 1;
 }
 .header__container {
+  border-bottom: 8px solid #222;
   width: 100vw;
   height: 90vh;
   position: relative;

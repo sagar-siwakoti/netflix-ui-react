@@ -8,7 +8,7 @@ function Header(props) {
     <div className="header__container">
       <div className="header__top">
         <img src={logo} alt="Logo" />
-        <NavLink to="/" className="signIn__btn">
+        <NavLink to="/signin" className="signIn__btn">
           Sign In
         </NavLink>
       </div>

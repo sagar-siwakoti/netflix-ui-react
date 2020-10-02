@@ -20,6 +20,7 @@ function Header(props) {
           Ready to watch? Enter your email to create or restart your membership.
         </h3>
         <Link className="header__contentBtn">try it now<ArrowForwardIosIcon/></Link>
+        <h3>Only new members are eligible for this offer.</h3>
       </div>
     </div>
   );

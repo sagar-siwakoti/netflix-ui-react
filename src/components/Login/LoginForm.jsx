@@ -1,5 +1,6 @@
 import React from "react";
 import "./LoginForm.css";
+import {Link} from "react-router-dom";
 function LoginForm(props) {
   return (
     <div className="form__containerOutside">
@@ -20,7 +21,9 @@ function LoginForm(props) {
           <label className="checkbox__container">
             Remember me
             <input type="checkbox" checked/>
+            <span className="checkmark"></span>
           </label>
+          <Link to="/" className="need__help">Need Help?</Link>
         </form>
       </div>
     </div>

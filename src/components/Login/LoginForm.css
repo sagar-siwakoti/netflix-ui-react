@@ -58,3 +58,23 @@ input{
     text-decoration: none;
     margin: 1rem 0;
 }
+.checkbox__container{
+    margin-left: 0.75rem;
+    padding-left: 1.875rem;
+    position: relative;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+.checkbox__container input{
+    display: none;
+}
+.checkmark{
+    display: inline-block;
+    background: #454545;
+    width: 1.1rem;
+    height: 1.1rem;
+    left: 0;
+    top: 0;
+    border-radius: 0.1rem;
+    position: absolute;
+}

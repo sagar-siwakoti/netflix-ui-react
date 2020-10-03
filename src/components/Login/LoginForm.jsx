@@ -1,6 +1,7 @@
 import React from "react";
 import "./LoginForm.css";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import FBlogo from "../../assets/images/fb-logo.png";
 function LoginForm(props) {
   return (
     <div className="form__containerOutside">
@@ -20,10 +21,15 @@ function LoginForm(props) {
           </div>
           <label className="checkbox__container">
             Remember me
-            <input type="checkbox" checked/>
+            <input type="checkbox" checked />
             <span className="checkmark"></span>
           </label>
-          <Link to="/" className="need__help">Need Help?</Link>
+          <Link to="/" className="need__help">
+            Need Help?
+          </Link>
+          <div className="buttom__form">
+            <img src={FBlogo} alt="fblogo" />
+          </div>
         </form>
       </div>
     </div>

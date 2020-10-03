@@ -17,6 +17,10 @@ function LoginForm(props) {
           <div className="input__container">
             <button type="submit">Sign In</button>
           </div>
+          <label className="checkbox__container">
+            Remember me
+            <input type="checkbox" checked/>
+          </label>
         </form>
       </div>
     </div>

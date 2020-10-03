@@ -29,6 +29,11 @@ function LoginForm(props) {
           </Link>
           <div className="buttom__form">
             <img src={FBlogo} alt="fblogo" />
+            <Link to="/" className="login__fb">
+              Login with Facebook
+            </Link><br/><br/>
+            <span style={{color:"#999"}}>New to Netflix?</span>&nbsp;
+            <Link className="sign__upText">Sign Up now.</Link>
           </div>
         </form>
       </div>

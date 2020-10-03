@@ -68,6 +68,18 @@ input{
 .checkbox__container input{
     display: none;
 }
+.checkbox__container input:checked + .checkmark:after{
+    content: "";
+    position: absolute;
+    height: 0.25rem;
+    width: 0.625rem;
+    border-left: 2px solid #000;
+    border-bottom: 2px solid #000;
+    top: 25%;
+    left: 21%;
+    transform: rotate(-45deg);
+}
+
 .checkmark{
     display: inline-block;
     background: #454545;

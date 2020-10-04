@@ -119,3 +119,6 @@ input {
 .sign__upText:hover {
   text-decoration: underline;
 }
+.input__error{
+  border-bottom: 1px solid #db7302;
+}

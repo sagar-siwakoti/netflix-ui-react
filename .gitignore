@@ -26,3 +26,6 @@ yarn-error.log*
 
 #intelliJ
 /.idea
+
+#firebase
+src/firebases.js

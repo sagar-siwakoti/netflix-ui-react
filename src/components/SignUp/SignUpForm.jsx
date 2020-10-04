@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./LoginForm.css";
+import "../Login/LoginForm";
 import { Link } from "react-router-dom";
 import FBlogo from "../../assets/images/fb-logo.png";
 
@@ -7,19 +7,25 @@ const regexp = RegExp(
   /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
 );
 
-function LoginForm(props) {
+function SignUpForm(props) {
   const [state, setState] = useState({
     email: "",
+    username:"",
     password: "",
     emailError: "",
     passwordError: "",
-    checked:true,
+    checked: true,
   });
   const handleEmailChange = (e) => {
     setState({
       email: e.target.value,
     });
   };
+  const handleUsernameChange = (e) => {
+      setState({
+        username: e.target.value,
+      });
+    };
   const handlePasswordChange = (e) => {
     setState({
       password: e.target.value,
@@ -58,7 +64,7 @@ function LoginForm(props) {
     }
   };
 
-  const handlerCheckedBox=(e)=>{
+  const handlerCheckedBox = (e) => {
     setState({
       checked: e.target.checked,
     });
@@ -68,7 +74,19 @@ function LoginForm(props) {
     <div className="form__containerOutside">
       <div className="form__container">
         <form>
-          <h1>Sign In</h1>
+          <h1>Sign Up</h1>
+          <div className="input__container">
+            <input
+              className=
+                 "input__empty"
+
+              value={state.username}
+              type="text"
+              required
+              onChange={handleUsernameChange}
+            />
+            <label>Username</label>
+          </div>
           <div className="input__container">
             <input
               className={
@@ -99,13 +117,16 @@ function LoginForm(props) {
           </div>
           <div className="input__container">
             <button type="submit" onClick={(e) => onSubmit(e)}>
-              Sign In
+              Sign Up
             </button>
           </div>
           <label className="checkbox__container">
             Remember me
-            <input type="checkbox" defaultChecked={state.checked}
-            onChange={handlerCheckedBox}/>
+            <input
+              type="checkbox"
+              defaultChecked={state.checked}
+              onChange={handlerCheckedBox}
+            />
             <span className="checkmark"></span>
           </label>
           <Link to="/" className="need__help">
@@ -116,10 +137,6 @@ function LoginForm(props) {
             <Link to="/" className="login__fb">
               Login with Facebook
             </Link>
-            <br />
-            <br />
-            <span style={{ color: "#999" }}>New to Netflix?</span>&nbsp;
-            <Link className="sign__upText" to="/signup">Sign Up now.</Link>
           </div>
         </form>
       </div>
@@ -127,4 +144,4 @@ function LoginForm(props) {
   );
 }
 
-export default LoginForm;
+export default SignUpForm;

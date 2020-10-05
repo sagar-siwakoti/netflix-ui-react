@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import "../Login/LoginForm";
 import { Link } from "react-router-dom";
 import FBlogo from "../../assets/images/fb-logo.png";
@@ -16,7 +16,7 @@ function SignUpForm(props) {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
 
- /* const [state, setState] = useState({
+  /* const [state, setState] = useState({
     email: "",
     username:"",
     password: "",
@@ -77,7 +77,7 @@ function SignUpForm(props) {
       checked: e.target.checked,
     });
   };*/
-//firebase stuff
+  //firebase stuff
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
       if (authUser) {
@@ -102,13 +102,13 @@ function SignUpForm(props) {
 
     //calling authentication to firebase
     auth
-        .createUserWithEmailAndPassword(email, password)
-        .then((authUser) => {
-          return authUser.user.updateProfile({
-            displayName: username,
-          });
-        })
-        .catch((error) => alert(error.message));
+      .createUserWithEmailAndPassword(email, password)
+      .then((authUser) => {
+        return authUser.user.updateProfile({
+          displayName: username,
+        });
+      })
+      .catch((error) => alert(error.message));
   };
 
   return (
@@ -116,58 +116,47 @@ function SignUpForm(props) {
       <div className="form__container">
         <form>
           <h1>Sign Up</h1>
-          {/*<div className="input__container">
+          <div className="input__container">
             <input
-              className=
-                 "input__empty"
-
-              value={state.username}
+              className="input__empty"
               type="text"
-              required
-              onChange={handleUsernameChange}
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
             <label>Username</label>
           </div>
           <div className="input__container">
             <input
-              className={
-                state.emailError ? "input__error input__empty" : "input__empty"
-              }
-              value={state.email}
-              type="email"
-              required
-              onChange={handleEmailChange}
+              className="input__empty"
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <label>Email or Phone Number</label>
-            <span style={{ color: "#db7302" }}>{state.emailError}</span>
+            {/*<span style={{ color: "#db7302" }}>{state.emailError}</span>*/}
           </div>
           <div className="input__container">
             <input
-              value={state.password}
-              className={
-                state.passwordError
-                  ? "input__error input__empty"
-                  : "input__empty"
-              }
+              className="input__empty"
               type="password"
-              required
-              onChange={handlePasswordChange}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <label>Password</label>
-            <span style={{ color: "#db7302" }}>{state.passwordError}</span>
+            {/*<span style={{ color: "#db7302" }}>{state.passwordError}</span>*/}
           </div>
           <div className="input__container">
-            <button type="submit"  onClick={signUp}>
+            <button type="submit" onClick={signUp}>
               Sign Up
             </button>
           </div>
           <label className="checkbox__container">
             Remember me
-            <input
+            {/*<input
               type="checkbox"
               defaultChecked={state.checked}
               onChange={handlerCheckedBox}
-            />
+            />*/}
             <span className="checkmark"></span>
           </label>
           <Link to="/" className="need__help">
@@ -178,26 +167,7 @@ function SignUpForm(props) {
             <Link to="/" className="login__fb">
               Login with Facebook
             </Link>
-          </div>*/}
-          <Input
-              type="text"
-              placeholder="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-          />
-          <Input
-              type="text"
-              placeholder="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-          />
-          <Input
-              type="password"
-              placeholder="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-          />
-          <Button onClick={signUp}>Sign Up</Button>
+          </div>
         </form>
       </div>
     </div>

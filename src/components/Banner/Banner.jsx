@@ -17,8 +17,8 @@ function Banner(props) {
   }, []);
   console.log(movie);
 
-  function truncate(str,n){
-    return str?.length>n?str.substr(0,n-1)+"...":str;
+  function truncate(str, n) {
+    return str?.length > n ? str.substr(0, n - 1) + "..." : str;
   }
 
   return (
@@ -33,7 +33,9 @@ function Banner(props) {
       {/*background image*/}
       <div className="banner__contents">
         {/*title*/}
-        <h1 className="banner__title">{movie?.title || movie?.name || movie?.original_name}</h1>
+        <h1 className="banner__title">
+          {movie?.title || movie?.name || movie?.original_name}
+        </h1>
         {/*DIV->2 OTA BUTTON*/}
         <div className="banner__buttons">
           <button className="banner__button">Play</button>
@@ -41,7 +43,7 @@ function Banner(props) {
         </div>
         {/*description*/}
         <h1 className="banner__description">
-          {truncate(movie?.overview,150)}
+          {truncate(movie?.overview, 150)}
         </h1>
       </div>
       <div className="banner__fadeButtom" />

@@ -5,12 +5,12 @@ import requests from "./requests";
 import Banner from "./components/Banner/Banner";
 import Nav from "./components/NavBar/Nav";
 function InsideSignIn() {
-    return (
-        <div className="inside">
-         {/*Nav*/}
-         <Nav/>
+  return (
+    <div className="inside">
+      {/*Nav*/}
+      <Nav />
       Banner
-      <Banner/>
+      <Banner />
       <Row
         title="NETFLIX Originals"
         fetchUrl={requests.fetchNetflixOriginals}
@@ -22,12 +22,10 @@ function InsideSignIn() {
       <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
       <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
       <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
-      <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
-   }
-            {/*=====================Inside signup work============================*/}
-
-        </div>
-    );
+      <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />}
+      {/*=====================Inside signup work============================*/}
+    </div>
+  );
 }
 
 export default InsideSignIn;

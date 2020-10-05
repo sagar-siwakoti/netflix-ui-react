@@ -3,6 +3,7 @@ import "../Login/LoginForm";
 import { Link } from "react-router-dom";
 import FBlogo from "../../assets/images/fb-logo.png";
 import { auth } from "../../firebases";
+import { useHistory } from "react-router-dom";
 
 /*const regexp = RegExp(
   /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
@@ -13,6 +14,9 @@ function SignUpForm(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+
+  let history = useHistory();
+
   /* const [state, setState] = useState({
     email: "",
     username:"",
@@ -111,6 +115,9 @@ function SignUpForm(props) {
         });
       })
       .catch((error) => alert(error.message));
+    if (user){
+      history.push("/dashboard");
+    }
   };
 
   return (

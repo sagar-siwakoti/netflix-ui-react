@@ -1,14 +1,22 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import "../Login/LoginForm";
 import { Link } from "react-router-dom";
 import FBlogo from "../../assets/images/fb-logo.png";
+import { auth } from "../../firebases";
+import Input from "@material-ui/core/Input";
+import Button from "@material-ui/core/Button";
 
 const regexp = RegExp(
   /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
 );
 
 function SignUpForm(props) {
-  const [state, setState] = useState({
+  const [user, setUser] = useState(null);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+
+ /* const [state, setState] = useState({
     email: "",
     username:"",
     password: "",
@@ -68,6 +76,39 @@ function SignUpForm(props) {
     setState({
       checked: e.target.checked,
     });
+  };*/
+//firebase stuff
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        //user has logged on
+        console.log(authUser);
+        setUser(authUser);
+      } else {
+        //user has logged out
+        setUser(null);
+      }
+    });
+    return () => {
+      //perform some cleanup actions
+      unsubscribe();
+    };
+  }, []);
+
+  //signup
+
+  const signUp = (event) => {
+    event.preventDefault();
+
+    //calling authentication to firebase
+    auth
+        .createUserWithEmailAndPassword(email, password)
+        .then((authUser) => {
+          return authUser.user.updateProfile({
+            displayName: username,
+          });
+        })
+        .catch((error) => alert(error.message));
   };
 
   return (
@@ -75,7 +116,7 @@ function SignUpForm(props) {
       <div className="form__container">
         <form>
           <h1>Sign Up</h1>
-          <div className="input__container">
+          {/*<div className="input__container">
             <input
               className=
                  "input__empty"
@@ -116,7 +157,7 @@ function SignUpForm(props) {
             <span style={{ color: "#db7302" }}>{state.passwordError}</span>
           </div>
           <div className="input__container">
-            <button type="submit" onClick={(e) => onSubmit(e)}>
+            <button type="submit"  onClick={signUp}>
               Sign Up
             </button>
           </div>
@@ -137,7 +178,26 @@ function SignUpForm(props) {
             <Link to="/" className="login__fb">
               Login with Facebook
             </Link>
-          </div>
+          </div>*/}
+          <Input
+              type="text"
+              placeholder="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+          />
+          <Input
+              type="text"
+              placeholder="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+          />
+          <Input
+              type="password"
+              placeholder="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+          />
+          <Button onClick={signUp}>Sign Up</Button>
         </form>
       </div>
     </div>

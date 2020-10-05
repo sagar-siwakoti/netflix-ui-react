@@ -1,5 +1,6 @@
 .form__containerOutside {
   display: grid;
+  background-color: white;
   justify-content: center;
   position: relative;
 }

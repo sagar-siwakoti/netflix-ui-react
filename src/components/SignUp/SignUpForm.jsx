@@ -3,19 +3,16 @@ import "../Login/LoginForm";
 import { Link } from "react-router-dom";
 import FBlogo from "../../assets/images/fb-logo.png";
 import { auth } from "../../firebases";
-import Input from "@material-ui/core/Input";
-import Button from "@material-ui/core/Button";
 
-const regexp = RegExp(
+/*const regexp = RegExp(
   /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
-);
+);*/
 
 function SignUpForm(props) {
   const [user, setUser] = useState(null);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-
   /* const [state, setState] = useState({
     email: "",
     username:"",
@@ -77,10 +74,15 @@ function SignUpForm(props) {
       checked: e.target.checked,
     });
   };*/
+  const clearInputs =()=>{
+    setEmail("");
+    setPassword("");
+  };
   //firebase stuff
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
       if (authUser) {
+        clearInputs()
         //user has logged on
         console.log(authUser);
         setUser(authUser);

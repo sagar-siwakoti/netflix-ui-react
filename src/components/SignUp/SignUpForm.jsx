@@ -115,6 +115,7 @@ function SignUpForm(props) {
         });
       })
       .catch((error) => alert(error.message));
+    //checking if user is logged in
     if (user){
       history.push("/dashboard");
     }

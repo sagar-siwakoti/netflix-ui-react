@@ -2,8 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "../../axios";
 import requests from "../../requests";
 import "../../styles/Banner.css";
+
 function Banner(props) {
+
   const [movie, setMoive] = useState([]);
+
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(requests.fetchNetflixOriginals);

@@ -126,6 +126,7 @@ function SignUpForm(props) {
   };
 
   return (
+
     <div className="form__containerOutside">
       <div className="form__container">
         <form>

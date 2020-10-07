@@ -79,6 +79,7 @@ function SignUpForm(props) {
     });
   };*/
   const clearInputs =()=>{
+    setUsername("");
     setEmail("");
     setPassword("");
   };
@@ -104,6 +105,7 @@ function SignUpForm(props) {
   //signup
 
   const signUp = (event) => {
+//default prevent
     event.preventDefault();
 
     //calling authentication to firebase
@@ -118,6 +120,8 @@ function SignUpForm(props) {
     //checking if user is logged in
     if (user){
       history.push("/dashboard");
+    }else{
+      alert("please create the account.")
     }
   };
 

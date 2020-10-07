@@ -102,8 +102,8 @@ function LoginForm(props) {
     auth
       .signInWithEmailAndPassword(email, password)
       .catch((error) => alert(error.message));
-    if (user){
-history.push("/dashboard");
+    if (user) {
+      history.push("/dashboard");
     }
   };
 

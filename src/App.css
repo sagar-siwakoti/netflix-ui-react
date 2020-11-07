@@ -12,7 +12,7 @@ body{
   font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
   -webkit-font-smoothing: antialiased;
   background: var(--main-dark);
-  color: #fff;
+  color: #ffffff;
 }
 a{
   text-decoration: none;

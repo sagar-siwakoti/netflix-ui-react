@@ -8,6 +8,6 @@
   <img src="https://img.shields.io/badge/Library-React_JS-61dbfb.svg" />
   <img src="https://img.shields.io/badge/Language-JavaScript-f0db4f.svg" />
   <img src="https://img.shields.io/badge/BackEnd-Firebase-brightgreen.svg" />
-    <img src="https://img.shields.io/badge/APIs-YTS_APIs-61dbfb.svg" />
+    <img src="https://img.shields.io/badge/APIs-TMDB_APIs-61dbfb.svg" />
     <img src="https://img.shields.io/badge/Hosting-Firebase_Hosting-black.svg" />
 </p>
